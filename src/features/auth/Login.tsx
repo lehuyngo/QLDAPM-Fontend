@@ -71,7 +71,7 @@ const Login = () => {
 
   // Component render
   return (
-    <VietnameseTetTheme className='page-login'>
+    <div className='page-login'>
       <LoginFormStyle
         name='normal_login'
         onFinish={onFinish}
@@ -126,7 +126,7 @@ const Login = () => {
           </div>
         </Form.Item>
       </LoginFormStyle>
-    </VietnameseTetTheme>
+    </div>
   )
 }
 

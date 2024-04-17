@@ -3,7 +3,7 @@ import { ToolbarLead } from '../../component/toolbar/toolbarLead'
 import CrmPageLayout from '../layout'
 import { TableContent } from './Table'
 import LeadForm from './form/LeadForm'
-import TaskList from './taskList'
+
 import { useGetLeadList } from '../../api/reactQuery/Lead'
 
 const LeadManagement = () => {
@@ -73,7 +73,6 @@ const LeadManagement = () => {
         }}
       >
         <TableContent leadList={filteredData} loading={isLoading} />
-        <TaskList />
       </div>
 
       {isCreateLead && (

@@ -35,7 +35,7 @@ import ClientCard from '../../../component/card/clientCard'
 import LeadCard from '../../../component/card/leadCard'
 import { NoteCard } from '../../../component/card/noteCard'
 import DeleteForm from '../../../component/deleteForm/DeleteForm'
-import { NotificationCustom } from '../../../component/notification/Notification'
+
 import TagForm from '../../../component/tagForm/TagForm'
 import TagListBar from '../../../component/tagListBar/TagListBar'
 import { clearSpaceString, getTextColor } from '../../../utils/FunctionsShare'
@@ -70,7 +70,7 @@ import {
   sortDataByCreatedTime,
   sortDataByRangeTime
 } from '../../../utils/SortData'
-import { ToolbarContactDetails } from '../../contact/style'
+
 import { EmptyActivityWrapper } from '../style'
 
 const ClientDetail: React.FC = () => {
@@ -241,20 +241,11 @@ const ClientDetail: React.FC = () => {
         queryClient.invalidateQueries({
           queryKey: ['GetClientNoteActivities']
         })
-        NotificationCustom({
-          type: 'success',
-          message: 'Delete success',
-          description: 'The note has been deleted successfully!'
-        })
+
         onChangeLoading(false)
         setIsShowDeleteNote(false)
       },
       onError: (error) => {
-        NotificationCustom({
-          type: 'error',
-          message: 'Delete fail',
-          description: error.message
-        })
         onChangeLoading(false)
         console.error('Error posting data')
       }
@@ -275,21 +266,12 @@ const ClientDetail: React.FC = () => {
         queryClient.invalidateQueries({
           queryKey: ['GetClientNoteActivities']
         })
-        NotificationCustom({
-          type: 'success',
-          message: 'Create success',
-          description: 'The note has been created successfully!'
-        })
+
         onChangeLoading(false)
         setIsShowAddNote(false)
         handleResetForm()
       },
       onError: (error) => {
-        NotificationCustom({
-          type: 'error',
-          message: 'Create fail',
-          description: error.message
-        })
         onChangeLoading(false)
         console.error('Error posting data')
       }
@@ -309,20 +291,11 @@ const ClientDetail: React.FC = () => {
         queryClient.invalidateQueries({
           queryKey: ['GetClientNoteActivities']
         })
-        NotificationCustom({
-          type: 'success',
-          message: 'Update success',
-          description: 'The note has been updated successfully!'
-        })
+
         onChangeLoading(false)
         setIsShowEditNote(false)
       },
       onError: (error) => {
-        NotificationCustom({
-          type: 'error',
-          message: 'Update fail',
-          description: error.message
-        })
         onChangeLoading(false)
         console.error('Error posting data')
       }
@@ -350,20 +323,11 @@ const ClientDetail: React.FC = () => {
         queryClient.invalidateQueries({
           queryKey: ['GetClientTagActivities']
         })
-        NotificationCustom({
-          type: 'success',
-          message: 'Create success',
-          description: 'The tag has been created successfully!'
-        })
+
         onChangeLoading(false)
         setIsShowAddTag(false)
       },
       onError: (error) => {
-        NotificationCustom({
-          type: 'error',
-          message: 'Create fail',
-          description: error.message
-        })
         onChangeLoading(false)
         console.error('Error posting data')
       }
@@ -382,20 +346,11 @@ const ClientDetail: React.FC = () => {
         queryClient.invalidateQueries({
           queryKey: ['GetClientTagActivities']
         })
-        NotificationCustom({
-          type: 'success',
-          message: 'Delete success',
-          description: 'The tag has been deleted successfully!'
-        })
+
         onChangeLoading(false)
         setIsShowDeleteTag(false)
       },
       onError: (error) => {
-        NotificationCustom({
-          type: 'error',
-          message: 'Delete fail',
-          description: error.message
-        })
         onChangeLoading(false)
         console.error('Error posting data')
       }
@@ -412,20 +367,11 @@ const ClientDetail: React.FC = () => {
         queryClient.invalidateQueries({
           queryKey: ['GetClientContactActivities']
         })
-        NotificationCustom({
-          type: 'success',
-          message: 'Delete success',
-          description: 'The contact has been deleted successfully!'
-        })
+
         onChangeLoading(false)
         setIsShowDeleteContact(false)
       },
       onError: (error) => {
-        NotificationCustom({
-          type: 'error',
-          message: 'Delete fail',
-          description: error.message
-        })
         onChangeLoading(false)
         console.error('Error posting data')
       }
@@ -452,20 +398,11 @@ const ClientDetail: React.FC = () => {
         queryClient.invalidateQueries({
           queryKey: ['GetClientLeadActivities']
         })
-        NotificationCustom({
-          type: 'success',
-          message: 'Add contacts success',
-          description: 'The lead has been created successfully!'
-        })
+
         onChangeLoading(false)
         setIsShowAddLead(false)
       },
       onError: (error) => {
-        NotificationCustom({
-          type: 'error',
-          message: 'Created lead failed',
-          description: error.message
-        })
         onChangeLoading(false)
         console.error('Error posting data')
       }
@@ -485,20 +422,11 @@ const ClientDetail: React.FC = () => {
         queryClient.invalidateQueries({
           queryKey: ['GetClientLeadActivities']
         })
-        NotificationCustom({
-          type: 'success',
-          message: 'Add leads success',
-          description: 'The lead has been created successfully!'
-        })
+
         onChangeLoading(false)
         setIsShowAddLead(false)
       },
       onError: (error) => {
-        NotificationCustom({
-          type: 'error',
-          message: 'Add leads failed',
-          description: error.message
-        })
         onChangeLoading(false)
         console.error('Error posting data')
       }
@@ -518,20 +446,11 @@ const ClientDetail: React.FC = () => {
         queryClient.invalidateQueries({
           queryKey: ['GetClientLeadActivities']
         })
-        NotificationCustom({
-          type: 'success',
-          message: 'Delete success',
-          description: 'The lead has been deleted successfully!'
-        })
+
         onChangeLoading(false)
         setIsShowDeleteLead(false)
       },
       onError: (error) => {
-        NotificationCustom({
-          type: 'error',
-          message: 'Delete fail',
-          description: error.message
-        })
         onChangeLoading(false)
         console.error('Error posting data')
       }
@@ -603,34 +522,34 @@ const ClientDetail: React.FC = () => {
               </div>
             )}
           </Card>
-          <ToolbarContactDetails>
-            <ModePage
-              tabs={[
-                {
-                  label: 'History',
-                  value: TAB_DETAIL_PAGE.HISTORY
-                },
-                {
-                  label: 'Tag',
-                  value: TAB_DETAIL_PAGE.TAG
-                }
-              ]}
-              tab={tab}
-              onChangeTab={handleChangeTab}
-            />
-            <div className='actions'>
-              {tab === TAB_DETAIL_PAGE.TAG && (
-                <div className='action tag'>
-                  <Button onClick={() => setIsShowAddTag(true)}>
-                    Create Tag
-                  </Button>
-                </div>
-              )}
-              <div className='action filter-by-time'>
-                <FilterByMonth onChangeTime={handleChangeRangeTime} />
+
+          <ModePage
+            tabs={[
+              {
+                label: 'History',
+                value: TAB_DETAIL_PAGE.HISTORY
+              },
+              {
+                label: 'Tag',
+                value: TAB_DETAIL_PAGE.TAG
+              }
+            ]}
+            tab={tab}
+            onChangeTab={handleChangeTab}
+          />
+          <div className='actions'>
+            {tab === TAB_DETAIL_PAGE.TAG && (
+              <div className='action tag'>
+                <Button onClick={() => setIsShowAddTag(true)}>
+                  Create Tag
+                </Button>
               </div>
+            )}
+            <div className='action filter-by-time'>
+              <FilterByMonth onChangeTime={handleChangeRangeTime} />
             </div>
-          </ToolbarContactDetails>
+          </div>
+
           <div
             style={{ height: `calc(100vh - 188px)` }}
             className='main-content-wrapper'

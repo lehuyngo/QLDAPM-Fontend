@@ -35,7 +35,7 @@ import {
 import { IMeetingNote } from '../../../interfaces/IMeetingNote'
 import { IUser } from '../../../interfaces/IUser'
 import { timestampToDateTime } from '../../../utils/convertTimestamp'
-import TaskForm from '../../task/form/TaskForm'
+
 import MeetingNoteFormEdit from '../form/MeetingNoteFormEdit'
 import ModeShowContent from './ModeShowContent'
 
@@ -678,15 +678,6 @@ const MeetingNoteItem: React.FC<MeetingNoteItemProps> = ({
         </>
       ) : (
         <></>
-      )}
-      {isOpeningToCreateTask && (
-        <TaskForm
-          title='Create Task'
-          visible={isOpeningToCreateTask}
-          setVisible={setOpeningToCreateTask}
-          selectedLead={selectedLead}
-          titleTask={newTitleTask}
-        />
       )}
     </>
   )

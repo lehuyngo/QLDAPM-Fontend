@@ -19,7 +19,7 @@ import Highlight from './Highlight'
 import MeetingDate from './MeetingDate'
 import MeetingNote from './MeetingNote'
 import ProcessStatus from './ProcessStatus'
-import TaskInformation from './TaskInformation'
+
 import OverlayDefault from '../../../component/overlayLoading'
 
 // StyleSheets
@@ -92,7 +92,7 @@ const LeadDetail: React.FC<LeadDetailProps> = () => {
             isLoading={isLoadingStatusList || isFetchingStatusList}
           />
           <div style={{ display: 'flex', gap: '12px', width: '100%' }}>
-            <div style={{ width: '75%' }}>
+            <div style={{ width: '100%' }}>
               <Highlight
                 highlightList={highlightList?.data}
                 isLoading={isFetchingGetHighlight || isLoadingGetHighlight}
@@ -108,7 +108,7 @@ const LeadDetail: React.FC<LeadDetailProps> = () => {
                     contactList={contactList?.data}
                   />
                 </div>
-                <div style={{ width: '75%' }}>
+                <div style={{ width: '100%' }}>
                   <MeetingNote
                     meetingNoteList={meetingNoteList?.data}
                     isLoading={
@@ -122,12 +122,6 @@ const LeadDetail: React.FC<LeadDetailProps> = () => {
                   />
                 </div>
               </div>
-            </div>
-            <div style={{ width: '25%' }}>
-              <TaskInformation
-                taskList={taskList?.data}
-                isLoading={isLoadingTaskList || isFetchingTaskList}
-              />
             </div>
           </div>
         </ContentLeadDetail>

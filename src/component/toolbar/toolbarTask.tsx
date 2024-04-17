@@ -4,7 +4,7 @@ import { ToolbarStyle } from './styled'
 import { FiGrid, FiList, FiPlusCircle, FiSearch } from 'react-icons/fi'
 import styled from 'styled-components'
 import { useDebounce } from '../../hooks/useDebounce'
-import { MODE_VIEW } from '../../features/task/commom'
+
 
 type Props = {
   onOpenCreate: () => void
@@ -50,18 +50,6 @@ const ToolbarTask: React.FC<Props> = ({
       />
 
       <div className='task-toolbar-right'>
-        {viewKanban === MODE_VIEW.KANBAN && (
-          <div className='group-right'>
-            <div className='task-type deadline'>
-              <div className='type-color'></div>
-              <div className='type-name'>Deadline</div>
-            </div>
-            <div className='task-type toolate'>
-              <div className='type-color'></div>
-              <div className='type-name'>Too Late</div>
-            </div>
-          </div>
-        )}
         <div className='group-right'>
           <SegmentedStyle
             value={viewKanban}

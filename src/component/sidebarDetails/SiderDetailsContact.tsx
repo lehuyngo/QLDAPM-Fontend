@@ -12,8 +12,7 @@ import { useParams } from 'react-router-dom'
 
 import { useGetContactDetail } from '../../api/reactQuery/Contact'
 import { DETAIL_PAGE_TYPE, GENDER } from '../../constants/common'
-import CreateContact from '../../features/contact/contactForm/CreateContact'
-import QuickChangeNameCard from '../../features/contact/contactForm/QuickUpNameCard'
+
 import { useContactService } from '../../features/service/ServiceContact'
 import DefaultImage from '../../resources/images/image-default.jpg'
 import DefaultNameCard from '../../resources/images/name-card-default.png'
@@ -252,27 +251,6 @@ const SiderDetailsContact = () => {
             </div>
           </div>
         </div>
-      )}
-
-      {openMEditContact && (
-        <CreateContact
-          visible={openMEditContact}
-          onClose={handleCloseEditContact}
-          contactId={contactID}
-          onUpdate={handleUpdate}
-          resetForm={resetForm}
-          loading={isFormLoading}
-        />
-      )}
-
-      {quickEditNameCard && (
-        <QuickChangeNameCard
-          title={'Edit Name Card'}
-          visible={quickEditNameCard}
-          onClose={() => setQuickEditNameCard(false)}
-          uuid={contactID}
-          oldData={contactDetail}
-        />
       )}
     </SiderStyled>
   )

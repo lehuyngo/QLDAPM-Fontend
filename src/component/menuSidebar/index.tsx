@@ -41,24 +41,7 @@ const MenuSideBar = () => {
   const items: MenuProps['items'] = [
     // getItem('Dashboard', 'dashboard', <FiGrid />, 'disable-menu-item'),
     getItem('Lead Management', 'leads', <FiClipboard />),
-    getItem('Client Management', 'clients', <FiBriefcase />),
-    getItem('Contact Management', 'contacts', <FiUser />),
-    getItem('Task Management', 'tasks', <FiTable />),
-    getItem('Card Management', 'cards', <FiCreditCard />),
-    getItem('Batch Mail Management', 'mails', <FiMail />),
-    getItem('Dashboard Mail', 'mail_board', <FiBarChart2 />),
-    getItem(
-      'Point Report',
-      'point_report',
-      <FiStar
-        style={{
-          border: '1px solid',
-          padding: '2px',
-          borderRadius: '50rem',
-          fill: 'currentcolor'
-        }}
-      />
-    )
+    getItem('Client Management', 'clients', <FiBriefcase />)
   ]
 
   const PAGES = {

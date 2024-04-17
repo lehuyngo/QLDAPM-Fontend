@@ -48,7 +48,7 @@ import {
   toTimestampFromDateAndMinute
 } from '../../../utils/convertTimestamp'
 import { maxLengthRule, validateEditor } from '../../../utils/validate'
-import TaskForm from '../../task/form/TaskForm'
+
 import { IContributor } from '../../../interfaces/IContributor'
 import ConfirmDraftNoteForm from './ConfirmDraftNoteForm'
 
@@ -843,15 +843,7 @@ const MeetingNoteFormCreate: React.FC<MeetingNoteFormProps> = ({
           </div>
         </MeetingNotePopover>
       )}
-      {isOpeningToCreateTask && (
-        <TaskForm
-          title='Create Task'
-          visible={isOpeningToCreateTask}
-          setVisible={setOpeningToCreateTask}
-          selectedLead={selectedLead}
-          titleTask={newTitleTask}
-        />
-      )}
+
       {draftForm.openForm && (
         <ConfirmDraftNoteForm
           visible={draftForm.openForm}
