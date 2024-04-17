@@ -216,13 +216,6 @@ const MeetingNoteFormCreate: React.FC<MeetingNoteFormProps> = ({
         form.setFieldValue('location', selectedMeeting.location)
       }
 
-      form.setFieldValue(
-        'contacts',
-        prevAttendeesData.contacts.map((item) => {
-          return `${item.contact.uuid}`
-        })
-      )
-
       let creatingDraftList: IDraftMeetingNote[] = JSON.parse(
         localStorage.getItem(LOCAL_STORAGE_ITEM.DRAFT_MEETING_NOTE) || '[]'
       )
@@ -244,7 +237,7 @@ const MeetingNoteFormCreate: React.FC<MeetingNoteFormProps> = ({
       if (prevAttendeesData.attendees.length > 0) {
         let quill = editorRef?.current?.getEditor()
         if (quill) {
-          let defaultHtml = getHTMLText`<span>Attendees: ${prevAttendeesData.attendees.map(
+          let defaultHtml = getHTMLText`<span>Attendees: ${prevAttendeesData.attendees?.map(
             (item) =>
               `<span class="mention" data-index="${item.uuid}" data-id="${item.user.uuid}" data-denotation-char="@" data-value="${item.user.displayname}"><span contenteditable="false">@${item.user.displayname}</span></span>`
           )}</span>`
@@ -787,7 +780,7 @@ const MeetingNoteFormCreate: React.FC<MeetingNoteFormProps> = ({
                 )
               }}
             >
-              {contactList.map((item: any) => (
+              {contactList?.map((item: any) => (
                 <Select.Option key={item.uuid} value={`${item.uuid}`}>
                   {item.shortname || item.fullname}
                   {item.email && ` - ${item.email}`}

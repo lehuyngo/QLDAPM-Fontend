@@ -257,7 +257,7 @@ const MeetingNoteFormEdit: React.FC<MeetingNoteFormProps> = ({
             prevAttendeesData.attendees.length > 0 &&
             newAttendeeUUIDs.length === 0
           ) {
-            let defaultHtml = getHTMLText`<p>Attendees: ${prevAttendeesData.attendees.map(
+            let defaultHtml = getHTMLText`<p>Attendees: ${prevAttendeesData.attendees?.map(
               (item, index) =>
                 `<span class="mention" data-index="${index}" data-denotation-char="@" data-id="${item.user.uuid}" data-value="${item.user.displayname}"><span contenteditable="false">@${item.user.displayname}</span></span>`
             )}</p>`
@@ -271,7 +271,7 @@ const MeetingNoteFormEdit: React.FC<MeetingNoteFormProps> = ({
 
       form.setFieldValue(
         'contacts',
-        prevAttendeesData.contacts.map((item) => {
+        prevAttendeesData.contacts?.map((item) => {
           return `${item.contact.uuid}`
         })
       )
@@ -958,7 +958,7 @@ const MeetingNoteFormEdit: React.FC<MeetingNoteFormProps> = ({
                 )
               }}
             >
-              {contactList.map((item) => (
+              {contactList?.map((item) => (
                 <Select.Option key={item.uuid} value={`${item.uuid}`}>
                   {item.shortname || item.fullname}
                   {item.email && ` - ${item.email}`}
